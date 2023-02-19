@@ -1,0 +1,26 @@
+.tableHeader {
+  width: 310px;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  box-shadow: 6px 6px 20px rgb(0 0 0 / 40%);
+}
+
+th {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 5px 0 5px 0;
+}
+td {
+  color: var(--color-secondary-text);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 30%);
+  font-weight: 400;
+  font-size: 15px;
+  padding: 5px 0 5px 0;
+}
+
+tbody:nth-child(2n) {
+  background-color: var(--color-avatar-back);
+}

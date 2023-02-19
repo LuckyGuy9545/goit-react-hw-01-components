@@ -1,113 +1,126 @@
-# React homework template
+## Task 1
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+```html
+<div class="profile">
+  <div class="description">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+      alt="User avatar"
+      class="avatar"
+    />
+    <p class="name">Petra Marica</p>
+    <p class="tag">@pmarica</p>
+    <p class="location">Salvador, Brasil</p>
+  </div>
 
-## Создание репозитория по шаблону
-
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
-
-![Creating repo from a template step 1](./assets/template-step-1.png)
-
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
-
-![Creating repo from a template step 2](./assets/template-step-2.png)
-
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
-
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
-
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
-
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
-
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
-
-## Подготовка к работе
-
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
-
-## Деплой
-
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
+  <ul class="stats">
+    <li>
+      <span class="label">Followers</span>
+      <span class="quantity">1000</span>
+    </li>
+    <li>
+      <span class="label">Views</span>
+      <span class="quantity">2000</span>
+    </li>
+    <li>
+      <span class="label">Likes</span>
+      <span class="quantity">3000</span>
+    </li>
+  </ul>
+</div>
 ```
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+```example
+import user from 'path/to/user.json;
 
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
+<Profile
+  username={user.username}
+  tag={user.tag}
+  location={user.location}
+  avatar={user.avatar}
+  stats={user.stats}
+/>
 ```
 
-## Как это работает
+## Task2
 
-![How it works](./assets/how-it-works.png)
+```html
+<section class="statistics">
+  <h2 class="title">Upload stats</h2>
 
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+  <ul class="stat-list">
+    <li class="item">
+      <span class="label">.docx</span>
+      <span class="percentage">4%</span>
+    </li>
+    <li class="item">
+      <span class="label">.mp3</span>
+      <span class="percentage">14%</span>
+    </li>
+    <li class="item">
+      <span class="label">.pdf</span>
+      <span class="percentage">41%</span>
+    </li>
+    <li class="item">
+      <span class="label">.mp4</span>
+      <span class="percentage">12%</span>
+    </li>
+  </ul>
+</section>
+```
+
+```example
+import data from '/path/to/data.json';
+
+<Statistics title="Upload stats" stats={data} />
+<Statistics stats={data} />
+```
+
+## Task 3
+
+```html
+<li class="item">
+  <span class="status"></span>
+  <img class="avatar" src="" alt="User avatar" width="48" />
+  <p class="name"></p>
+</li>
+```
+
+```example
+import friends from 'path/to/friends.json';
+
+<FriendList friends={friends} />;
+```
+
+## Task 4
+
+```html
+<table class="transaction-history">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>Invoice</td>
+      <td>125</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <td>Withdrawal</td>
+      <td>85</td>
+      <td>USD</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+```example
+import transactions from 'path/to/transactions.json';
+
+<TransactionHistory items={transactions} />;
+```

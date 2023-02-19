@@ -1,4 +1,25 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
+
+:root {
+  --color-avatar-back: rgb(252, 213, 162);
+  --color-white: #ffffff;
+  --color-black: #010101;
+  --color-green: #4be650;
+  --color-red: #f44336;
+  --color-blue: #2196f3;
+  --color-primary-text: #212121;
+  --color-secondary-text: #757575;
+  --color-light-white: #dcd9d9;
+}
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0;
